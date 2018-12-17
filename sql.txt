@@ -1,0 +1,127 @@
+Câu 1: T?o d?y d? lu?c d? co s? d? li?u quan h? nhu mô t? ? trên. Sinh viên t? d?nh nghia ki?u d? li?u cho các c?t  (0.5 di?m)
+
+
+Câu 2: Chèn toàn b? d? li?u m?u dã du?c minh h?a ? trên vào t?t c? các b?ng m?t cách chính xác (0.5 di?m)
+
+***** Luu ý: N?u không hoàn thành yêu c?u c?a câu 1 và câu 2 thì s? không du?c ch?m và tính di?m cho các yêu c?u ti?p theo *****
+
+Câu 3: Li?t kê nh?ng phòng karaoke ch?a du?c s? lu?ng t?i da du?i 20 khách (0.5 di?m)
+
+select maphong from phong where SoKhachToiDa < 20 
+
+Câu 4: Li?t kê thông tin c?a các d?ch v? có don v? tính là "Chai" v?i don giá nh? hon 20.000 VNÐ 
+và các d?ch v? có don v? tính là "Lon" v?i don giá l?n hon 30.000 VNÐ (0.5 di?m)
+
+select * from dichvu where DonViTinh = 'Chai' and DonGia < 20000
+union
+select * from dichvu where DonViTinh = 'Lon' and DonGia > 30000
+
+Câu 5: Li?t kê thông tin c?a các phòng karaoke có mã phòng b?t d?u b?ng c?m t? "VIP" (0.5 di?m)
+
+select * from phong where MaPhong like 'VIP%'
+
+Câu 6: Li?t kê thông tin c?a toàn b? các d?ch v?, yêu c?u s?p x?p gi?m d?n theo don giá (0.5 di?m)
+
+select * from dichvu 
+group by DonGia desc
+
+Câu 7: Ð?m s? hóa don có tr?ng thái là "Chua thanh toán" và có th?i gian b?t d?u s? d?ng n?m trong ngày hi?n t?i (0.5 di?m)
+
+select mahd, count(mahd) from HOADON
+where TrangThaiHD = 'Chua thanh toan' and day(ThoiGianBatDauSD) = 3 
+
+
+Câu 8: Li?t kê d?a ch? c?a toàn b? các khách hàng v?i yêu c?u m?i d?a ch? du?c li?t kê m?t l?n duy nh?t (0.5 di?m)
+
+select distinct(diachi) from KHACHHANG
+
+Câu 9: Li?t kê MaHD, MaKH, TenKH, DiaChi, MaPhong, DonGia (Ti?n gi?), ThoiGianBatDauSD, ThoiGianKetThucSD 
+c?a t?t c? các hóa don có tr?ng thái là "Ðã thanh toán" (0.5 di?m)
+
+select HOADON.MaHD, HOADON.MaKH, KHACHHANG.TenKH, diachi, HOADON.MaPhong, MUCTIEUGIO.DonGia, HOADON.ThoiGianBatDauSD, HOADON.ThoiGianKetThucSD
+from KHACHHANG inner join HOADON on KHACHHANG.MaKH = HOADON.MaKH
+inner join MUCTIEUGIO on HOADON.MaTienGio = MUCTIEUGIO.Matiengio
+where TrangThaiHD = 'Da thanh toan'
+
+
+Câu 10: Li?t kê MaKH, TenKH, DiaChi, MaHD, TrangThaiHD c?a t?t c? các hóa don v?i yêu c?u 
+nh?ng khách hàng chua t?ng có m?t hóa don nào thì cung li?t kê thông tin nh?ng khách hàng dó ra (0.5 di?m)
+
+select KHACHHANG.MaKH, KHACHHANG.TenKH, KHACHHANG.DiaChi, HOADON.TrangThaiHD, HOADON.MaHD
+from KHACHHANG left join HOADON on KHACHHANG.MaKH = HOADON.MaHD
+
+Câu 11: Li?t kê thông tin c?a các khách hàng dã t?ng s? d?ng d?ch v? "Trái cây" ho?c t?ng s? d?ng phòng karaoke có mã phòng là "VIP07" (0.5 di?m)
+
+select HOADON.MaKH from HOADON inner join CHITIET_SUDUNGDV on HOADON.MaHD = CHITIET_SUDUNGDV.MaDV
+where CHITIET_SUDUNGDV.MaDV = 'Trai Cay' or HOADON.MaPhong = 'VIP07'
+
+Câu 12: Li?t kê thông tin c?a các khách hàng chua t?ng s? d?ng d?ch v? hát karaoke l?n nào c? (0.5 di?m)
+
+select MaKH, TenKH from KHACHHANG 
+where MaKH not in (
+	select MaKH from HOADON 
+)
+
+Câu 13: Li?t kê thông tin c?a các khách hàng dã t?ng s? d?ng d?ch v? hát karaoke và chua t?ng s? d?ng d?ch v? nào khác kèm theo (0.5 di?m)
+
+select khachhang.MaKH, TenKH from KHACHHANG inner join HOADON on KHACHHANG.MaKH = HOADON.MaKH
+where HOADON.MaHD not in (
+	select MaHD from CHITIET_SUDUNGDV 
+)
+
+
+Câu 14: Li?t kê thông tin c?a nh?ng khách hàng dã t?ng hát karaoke vào nam "2014" nhung chua t?ng hát karaoke vào nam "2015"  (0.5 di?m)
+
+select makh from HOADON where year(ThoiGianBatDauSD) = 2014
+except
+select makh from HOADON where year(ThoiGianBatDauSD) = 2015
+
+Câu 15: Hi?n th? thông tin c?a nh?ng khách hàng có s? l?n hát karaoke nhi?u nh?t tính t? d?u nam 2014 d?n h?t nam 2014 (0.5 di?m)
+
+select top 1 KHACHHANG.MaKH, KHACHHANG.TenKH from KHACHHANG inner join HOADON on KHACHHANG.MaKH = HOADON.MaKH
+where YEAR (ThoiGianBatDauSD) = 2014
+group by khachhang.makh, khachhang.tenkh
+order by count(MaHD) desc
+
+Câu 16: Ð?m t?ng s? lu?ng lo?i d?ch v? dã du?c s? d?ng trong nam 2014 
+v?i yêu c?u ch? th?c hi?n tính d?i v?i nh?ng lo?i d?ch v? có don giá t? 50.000 VNÐ tr? lên (0.5 di?m)
+
+select DICHVU.MaDV, DICHVU.TenDV, count(CHITIET_SUDUNGDV.MaHD) from DICHVU 
+inner join CHITIET_SUDUNGDV on DICHVU.MaDV = CHITIET_SUDUNGDV.MaDV
+inner join HOADON on CHITIET_SUDUNGDV.MaHD = HOADON.MaHD
+where (YEAR(ThoiGianBatDauSD) = 2014 and year(ThoiGianKetThucSD) = 2014) and DonGia > 50000
+group by  DICHVU.MaDV, DICHVU.TenDV
+
+Câu 17: Li?t kê MaKH, TenKH, MaSoThue c?a khách hàng có d?a ch? là "H?i Châu" và ch? m?i hát karaoke m?t l?n duy nh?t, 
+k?t qu? du?c s?p x?p gi?m d?n theo TenKH (0.5 di?m)
+
+select KHACHHANG.MaKH, KHACHHANG.TenKH, KHACHHANG.MaSoThue from KHACHHANG join HOADON on KHACHHANG.MaKH = HOADON.MaKH
+where DiaChi = 'Hai Chau'
+group by KHACHHANG.MaKH, KHACHHANG.TenKH, KHACHHANG.MaSoThue
+having count(KHACHHANG.MaKH) = 1
+order by TenKH desc
+
+Câu 18: C?p nh?t c?t TrangThaiHD trong b?ng HOADON thành giá tr? "Ðã h?t h?n" 
+d?i v?i nh?ng khách hàng có d?a ch? là "H?i Châu" và có ThoiGianKetThucSD tru?c ngày 31/12/2015 (0.5 di?m)
+
+update HOADON 
+set TrangThaiHD = 'Da het han'
+where makh = (select KHACHHANG.MaKH from KHACHHANG join HOADON on KHACHHANG.makh = HOADON.MaKH 
+where KHACHHANG.DiaChi = 'Hai Chau' and YEAR(ThoiGianKetThucSD) < 2016 )
+
+Câu 19: C?p nh?t c?t MoTa trong b?ng PHONG thành giá tr? "Ðu?c s? d?ng nhi?u" 
+cho nh?ng phòng du?c s? d?ng t? 5 l?n tr? lên trong tháng 5 nam 2015  (0.5 di?m)
+
+update phong 
+set MoTa = 'duoc su dung nhieu'
+where MaPhong = (
+	select PHONG.MaPhong from phong join HOADON on phong.MaPhong = HOADON.MaPhong 
+	where (year(ThoiGianBatDauSD) = 2015 and month(ThoiGianBatDauSD) = 5) or (year(ThoiGianKetThucSD) = 2015 and month(ThoiGianKetThucSD) = 5)
+	group by phong.MaPhong
+	having count(MaHD) >5
+)
+
+
+Câu 20: Xóa nh?ng hóa don có ThoiGianBatDauSD tru?c ngày 20/11/2015 (0.5 di?m)
+
+
