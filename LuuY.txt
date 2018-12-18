@@ -1,0 +1,12 @@
+﻿//BETWEEN
+
+SELECT * FROM Orders
+WHERE OrderDate BETWEEN '1996-07-01' AND '1996-07-31';
+
+select *from SV where year(NgaySinh) between 1980 and 1996
+
+//tinh tuoi
+DATEDIFF(YEAR, NGUOIGIAMHO.NgaySinh, GETDATE()) 
+
+//ngaythangnam
+CONVERT(date, ThoiGianBatDauSD) < '20151120'
