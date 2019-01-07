@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="activity_main_width_button_topic">250dp</dimen>
+    <dimen name="activity_main_height_button_topic">80dp</dimen>
+    <dimen name="activity_main_size_text">22sp</dimen>
+
+    <dimen name="activity_main_width_button_tool">100dp</dimen>
+    <dimen name="activity_main_height_button_tool">100dp</dimen>
+
+    <dimen name="activity_main_height_img">380dp</dimen>
+    <dimen name="activity_main_width_img">430dp</dimen>
+
+    <dimen name="activity_main_height_volume">40dp</dimen>
+    <dimen name="activity_main_width_volume">200dp</dimen>
+
+</resources>

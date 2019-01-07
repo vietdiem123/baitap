@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/activity_main_width_img"
+                android:layout_height="@dimen/activity_main_height_img"
+                android:layout_gravity="center"
+                android:src="@drawable/title" />
+
+            <Button
+                style="@style/button_topic"
+                android:onClick="btLean"
+                android:text="@string/lean" />
+
+            <Button
+                style="@style/button_topic"
+                android:onClick="btPractice"
+                android:text="@string/paratice" />
+
+            <Button
+                style="@style/button_topic"
+                android:layout_gravity="center"
+                android:onClick="btTest"
+                android:text="@string/text" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_gravity="right|bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            style="@style/button_tool"
+            android:background="@drawable/button_custom_rating"/>
+        <Button
+            android:onClick="changelanguage"
+            style="@style/button_tool"
+            android:background="@drawable/button_custom_language"/>
+        <Button
+            style="@style/button_tool"
+            android:background="@drawable/button_custom_setting"/>
+    </LinearLayout>
+
+</LinearLayout>

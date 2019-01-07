@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:id="@+id/tv_listening_tuthu"
+        android:padding="10dp"
+        android:textSize="20dp"
+        android:text="12"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btSpeech_listening"
+            android:background="@drawable/volume_normal"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup_listening"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radio_listening_1"
+            android:text="mean1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkAnswer"/>
+        <RadioButton
+            android:id="@+id/radio_listening_2"
+            android:text="mean2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkAnswer"/>
+        <RadioButton
+            android:onClick="checkAnswer"
+            android:id="@+id/radio_listening_3"
+            android:text="mean3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/radio_listening_4"
+            android:text="mean4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkAnswer"/>
+    </RadioGroup>
+    <Button
+        android:id="@+id/bt_listening_next"
+        android:layout_gravity="right"
+        android:text="next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="checkAnswer"/>
+
+</LinearLayout>

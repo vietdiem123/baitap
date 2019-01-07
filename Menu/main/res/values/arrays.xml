@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="menu">
+        <item>diem</item>
+        <item>minh</item>
+        <item>trung</item>
+        <item>dung</item>
+        <item>hung</item>
+
+    </string-array>
+</resources>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    >
+
+    <LinearLayout
+        android:onClick="LinearTopics"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/practice">
+        <TextView
+            android:id="@+id/tvNumberPractive"
+            android:lines="1"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_width="250dp"
+            android:layout_height="50dp" />
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/triangle"/>
+    </LinearLayout>
+    <TextView
+
+        android:id="@+id/tvPractive"
+        android:paddingTop="10dp"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/btSpeechPractice"
+                android:layout_width="@dimen/activity_main_width_button_tool"
+                android:layout_height="@dimen/activity_main_height_button_tool"
+                android:background="@drawable/volume_normal"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <CheckBox
+                android:id="@+id/cbWord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/showWord"
+                android:onClick="cb_onclick"
+                android:checked="true"/>
+            <CheckBox
+                android:id="@+id/cbPronun"
+                android:checked="true"
+                android:onClick="cb_onclick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/showmPronunciation" />
+            <CheckBox
+                android:id="@+id/cbMean"
+                android:checked="true"
+                android:onClick="cb_onclick"
+                android:text="@string/showMean"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

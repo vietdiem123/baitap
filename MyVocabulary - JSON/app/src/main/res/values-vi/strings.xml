@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">MyVocabulary</string>
+    <string name="memory">MeMoRy</string>
+    <string name="listening">LisTening</string>
+    <string name="writing">Writing</string>
+    <string name="topic">ToPic</string>
+    <string name="test">Test</string>
+    <string name="showWord">Show Word</string>
+    <string name="showMean">Show Mean</string>
+    <string name="showmPronunciation"> Show Pronunciation</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="notTopic">You have not selected a topic yet</string>
+    <string name="congratu">Congratulations!</string>
+    <string name="writingTest">Writing Test</string>
+    <string name="memoryTest">Memory Test</string>
+    <string name="testAgain">Test Again</string>
+    <string name="listeningTest">Listening Test</string>
+
+    <string name="lean">Hoc</string>
+    <string name="paratice">Luyen Tap</string>
+    <string name="text">Kiem tra</string>
+
+    <string name="language">Ngon Ngu</string>
+    <string name="english">English</string>
+    <string name="vietnam">Viet Nam</string>
+    <string name="data_url">https://www.dropbox.com/s/m9jw7oivhcps83o/data.json?dl=1</string>
+</resources>

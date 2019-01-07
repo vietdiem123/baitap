@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/item1"
+        android:title="Search"
+        android:icon="@android:mipmap/sym_def_app_icon"
+        app:showAsAction="always"
+        />
+
+
+    <item
+        android:id="@+id/item2"
+        android:title="setting"
+
+        />
+
+    <item
+        android:id="@+id/menu_sub"
+        android:title="SubMenu">
+        <menu>
+            <item
+                android:id="@+id/item3"
+                android:title="item3"/>
+            <item
+                android:id="@+id/item4"
+                android:title="item4"/>
+
+        </menu>
+    </item>
+
+    <group android:id="@+id/group1"
+        android:checkableBehavior="single">
+        <item android:id="@+id/group1_item1"
+            android:title="group1_item1"/>
+        <item android:id="@+id/group1_item2"
+        android:title="group1_item2"/>
+    </group>
+
+    <group android:id="@+id/group2"
+        android:checkableBehavior="all">
+        <item android:id="@+id/checkAll"
+            android:title="ALL"/>
+        <item android:id="@+id/group2_item1"
+            android:title="group2_item1"/>
+        <item android:id="@+id/group2_item2"
+            android:title="group2_item2"/>
+    </group>
+
+</menu>

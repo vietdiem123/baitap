@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+
+        android:id="@+id/tv_menory_tuthu"
+        android:padding="10dp"
+        android:textSize="20dp"
+        android:text="12"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_menory_show"
+        android:text="ok"
+        android:gravity="center"
+        android:textSize="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup_memory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <RadioButton
+        android:id="@+id/radio_memory_1"
+        android:text="mean1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="checkAnswer"/>
+    <RadioButton
+        android:id="@+id/radio_memory_2"
+        android:text="mean2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="checkAnswer"/>
+    <RadioButton
+        android:onClick="checkAnswer"
+        android:id="@+id/radio_memory_3"
+        android:text="mean3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <RadioButton
+        android:id="@+id/radio_memory_4"
+        android:text="mean4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="checkAnswer"/>
+    </RadioGroup>
+    <Button
+        android:id="@+id/bt_memory_next"
+        android:layout_gravity="right"
+        android:text="next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="checkAnswer"/>
+
+</LinearLayout>
